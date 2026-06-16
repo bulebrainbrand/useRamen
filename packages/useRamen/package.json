@@ -1,7 +1,13 @@
 {
-  "name": "useRamen",
+  "name": "useramen",
   "version": "0.0.0",
-  "description": "A starter for creating a TypeScript package.",
+  "description": "React hook for Ramen-Api.",
+  "keywords": [
+    "hooks",
+    "ramen",
+    "ramen-api",
+    "react"
+  ],
   "license": "MIT",
   "files": [
     "dist"
@@ -10,9 +16,6 @@
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "scripts": {
     "build": "vp pack",
@@ -25,7 +28,6 @@
     "react": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^25.6.2",
     "@types/react": "catalog:",
     "@typescript/native-preview": "7.0.0-dev.20260509.2",
     "bumpp": "^11.1.0",
