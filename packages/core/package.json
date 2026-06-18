@@ -1,15 +1,10 @@
 {
   "name": "ramen-core",
-  "devDependencies": {
-    "typescript": "^6.0.3",
-    "vite-plus": "catalog:",
-    "@typescript/native-preview": "7.0.0-dev.20260509.2"
-  },
+  "version": "0.1.0",
+  "description": "util functions for ramen-api",
   "keywords": [
-    "hooks",
     "ramen",
-    "ramen-api",
-    "react"
+    "ramen-api"
   ],
   "license": "MIT",
   "files": [
@@ -26,5 +21,10 @@
     "test": "vp test",
     "check": "vp check",
     "prepublishOnly": "vp run build"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "7.0.0-dev.20260509.2",
+    "typescript": "^6.0.3",
+    "vite-plus": "catalog:"
   }
 }
