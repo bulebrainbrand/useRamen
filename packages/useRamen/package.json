@@ -25,12 +25,16 @@
     "prepublishOnly": "vp run build"
   },
   "dependencies": {
+    "ramen-core": "workspace:*",
     "react": "catalog:"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/react": "catalog:",
     "@types/react": "catalog:",
     "@typescript/native-preview": "7.0.0-dev.20260509.2",
     "bumpp": "^11.1.0",
+    "jsdom": "catalog:",
     "typescript": "^6.0.3",
     "vite-plus": "catalog:"
   }

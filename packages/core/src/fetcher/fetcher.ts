@@ -1,5 +1,5 @@
-import type { FetchOption, FetchResult } from "./types.ts";
-import { Err, Ok } from "./utils.ts";
+import type { FetchOption, FetchResult } from "../types.ts";
+import { Err, Ok } from "../utils.ts";
 
 export const fetchData = async <T>(
   url: string,

@@ -1,4 +1,4 @@
-import type { Shop, Shops } from "../fetcher/types.ts";
+import type { Shop, Shops } from "../types.ts";
 import { AuthorCache } from "./authorCache.ts";
 import { ShopCache } from "./shopCache.ts";
 import { ShopsCache, type ShopsId } from "./shopsCache.ts";

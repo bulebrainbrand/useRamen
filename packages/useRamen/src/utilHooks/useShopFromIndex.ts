@@ -1,5 +1,7 @@
-import { useShops, type FetchState } from "../coreHooks/index.ts";
-import type { Shop } from "../fetcher/types.ts";
+import { type FetchState } from "../coreHooks/index.ts";
+import { useRamenLoad } from "../coreHooks/useRamenLoad.ts";
+import { type Shop } from "ramen-core";
+import { fetchShopFromIndex } from "../primitiveFuncWapper/index.ts";
 /**
  *
  * @param index - zero-index
@@ -28,8 +30,6 @@ export function useShopFromIndex(
   prefecture?: string,
   timeout?: number,
   retry?: number,
-): FetchState<Shop> {
-  const fetchState = useShops(index + 1, 1, prefecture, timeout, retry);
-  if (fetchState.state === "success") return { state: "success", value: fetchState.value.shops[0] };
-  return fetchState;
+): FetchState<Shop, number> {
+  return useRamenLoad(fetchShopFromIndex, [index, prefecture, timeout, retry]);
 }

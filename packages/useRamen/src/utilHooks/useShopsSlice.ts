@@ -1,6 +1,6 @@
-import type { FetchState } from "../coreHooks/useRamenLoad.ts";
-import type { Shop } from "../fetcher/types.ts";
-import { useShopsRange } from "./useShopsRange.ts";
+import { useRamenLoad, type FetchState } from "../coreHooks/useRamenLoad.ts";
+import { fetchShopsSlice } from "../primitiveFuncWapper/index.ts";
+import { type Shop } from "ramen-core";
 
 export function useShopsSlice(
   start: number,
@@ -8,10 +8,6 @@ export function useShopsSlice(
   prefecture?: string,
   timeout?: number,
   retry?: number,
-): FetchState<Shop[]> {
-  if (start < 0) throw new TypeError("start must be >= 0");
-  if (end < 0) throw new TypeError("end must be >= 0");
-  if (start > end) throw new TypeError("cannot start > end");
-  const length = end - start;
-  return useShopsRange(start, length, prefecture, timeout, retry);
+): FetchState<Shop[], [number | false, number | false]> {
+  return useRamenLoad(fetchShopsSlice, [start, end, prefecture, timeout, retry]);
 }

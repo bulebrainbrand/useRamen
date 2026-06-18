@@ -1,4 +1,4 @@
-import type { Shop } from "../fetcher/types.ts";
+import type { Shop } from "../types.ts";
 
 export const ShopCache = new (class {
   cache: Partial<Record<string, { time: number; data: Shop }>> = {};

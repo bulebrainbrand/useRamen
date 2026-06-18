@@ -14,9 +14,4 @@ export default defineConfig({
     },
   },
   fmt: {},
-  test: {
-    environment: "jsdom",
-    setupFiles: ["./setupTest.ts"],
-    pool: "threads",
-  },
 });

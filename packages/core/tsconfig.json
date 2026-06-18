@@ -5,9 +5,7 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "resolveJsonModule": true,
-    "types": [
-      "react"
-    ],
+    "types": [],
     "strict": true,
     "noUnusedLocals": true,
     "declaration": true,
@@ -19,9 +17,9 @@
     "skipLibCheck": true
   },
   "include": [
-    "./src**/*.ts"
+    "./src/**/*.ts"
   ],
   "exclude": [
-    "./setupTest.ts"
+    "./dist/**"
   ]
 }

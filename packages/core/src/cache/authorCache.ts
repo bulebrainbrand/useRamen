@@ -1,4 +1,4 @@
-import type { Author, Photo } from "../fetcher/types.ts";
+import type { Author, Photo } from "../types.ts";
 
 export const AuthorCache = new (class {
   cache: Partial<Record<string, { time: number; data: Author }>> = {};
