@@ -1,5 +1,5 @@
 import { describe, expect, beforeEach, vi, it } from "vite-plus/test";
-import type { Author, Photo } from "../fetcher/types.ts";
+import type { Author, Photo } from "../types.ts";
 
 describe("test authotCache", () => {
   beforeEach(() => {

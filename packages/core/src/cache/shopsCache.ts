@@ -1,4 +1,4 @@
-import type { Shops } from "../fetcher/types.ts";
+import type { Shops } from "../types.ts";
 
 export type ShopsId = string;
 

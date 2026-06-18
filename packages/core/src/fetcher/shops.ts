@@ -1,11 +1,11 @@
-import type { FetchResult } from "./types.ts";
+import type { FetchResult } from "../types.ts";
 import { CacheManager } from "../cache/index.ts";
 import { ConcurrentPromiseManager } from "../concurrentPromiseManager.ts";
 import { SHOPS_URL } from "./contants.ts";
 import { fetchData } from "./fetcher.ts";
-import type { FetchOption, Shops } from "./types.ts";
+import type { FetchOption, Shops } from "../types.ts";
 import { ShopsCache } from "../cache/shopsCache.ts";
-import { Ok } from "./utils.ts";
+import { Ok } from "../utils.ts";
 
 const shopsFetchManager = new ConcurrentPromiseManager<FetchResult<Shops>>();
 

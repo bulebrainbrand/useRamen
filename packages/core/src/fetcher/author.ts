@@ -2,8 +2,8 @@ import { AuthorCache } from "../cache/authorCache.ts";
 import { ConcurrentPromiseManager } from "../concurrentPromiseManager.ts";
 import { AUTHOR_URL } from "./contants.ts";
 import { fetchData } from "./fetcher.ts";
-import type { Author, AuthorResult, FetchOption, FetchResult } from "./types.ts";
-import { Ok } from "./utils.ts";
+import type { Author, AuthorResult, FetchOption, FetchResult } from "../types.ts";
+import { Ok } from "../utils.ts";
 const authorFetchManager = new ConcurrentPromiseManager<FetchResult<Author>>();
 export const fetchAuthor = (
   authorId: string,

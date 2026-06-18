@@ -1,5 +1,5 @@
 import { describe, it, vi, expect, beforeEach } from "vite-plus/test";
-import type { Author, FetchError, FetchSuccess } from "./types.ts";
+import type { Author, FetchError, FetchSuccess } from "../types.ts";
 vi.mock("./fetcher.ts", () => {
   return {
     fetchData: vi.fn(),

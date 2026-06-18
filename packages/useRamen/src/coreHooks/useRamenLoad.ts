@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
-import type { FetchResult } from "../fetcher/index.ts";
+import type { FetchResult } from "ramen-core";
+import type { Primitive } from "../utils.ts";
 
-export type Fetcher<T, Arg extends Array<unknown>> = (...arg: Arg) => Promise<FetchResult<T>>;
+export type Fetcher<T, E, Arg extends Array<Primitive>> = (
+  ...arg: Arg
+) => Promise<FetchResult<T, E>>;
 
-export type FetchState<T> =
+export type FetchState<T, E> =
   | {
       state: "loading";
     }
-  | { state: "failed"; error: number }
+  | { state: "failed"; error: E }
   | { state: "success"; value: T };
 
-export function useRamenLoad<T, Arg extends Array<unknown>>(
-  fetcher: Fetcher<T, Arg>,
+export function useRamenLoad<T, E, Arg extends Array<Primitive>>(
+  fetcher: Fetcher<T, E, Arg>,
   args: Readonly<Arg>,
 ) {
-  const [fetchState, setFetchState] = useState<FetchState<T>>({ state: "loading" });
+  const [fetchState, setFetchState] = useState<FetchState<T, E>>({ state: "loading" });
   useEffect(() => {
     let cancelled = false;
     setFetchState({ state: "loading" });
@@ -30,6 +33,6 @@ export function useRamenLoad<T, Arg extends Array<unknown>>(
     return () => {
       cancelled = true;
     };
-  }, [fetcher, args]);
+  }, [fetcher, ...args]);
   return fetchState;
 }
